@@ -7,8 +7,9 @@ import uuid
 from datetime import datetime
 from models import storage
 
+
 class BaseModel:
-    """ This class contains functionalities common to all 
+    """ This class contains functionalities common to all
     other classes, from which they inherit.
     """
 
@@ -57,7 +58,7 @@ class BaseModel:
         """ This func returns as dict containing all keys/values-
         pairs of the __dict__ instance.
         """
-        
+
         my_dict = self.__dict__.copy()
         my_dict["__class__"] = type(self).__name__
         my_dict["created_at"] = my_dict["created_at"].isoformat()
