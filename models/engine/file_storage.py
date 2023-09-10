@@ -37,8 +37,8 @@ class FileStorage:
         """
 
         with open(FileStorage.__file_path, "w", encoding="utf-8") as f:
-            d = {k: v.to_dict() for k, v in FileStorage.__objects.items()}
-            json.dump(d, f)
+           d = {k: v.to_dict() for k, v in FileStorage.__objects.items()}
+           json.dump(d, f)
 
     def reload(self):
         """This func. deserializes/relods the JSON file to __objects
@@ -50,6 +50,6 @@ class FileStorage:
             return
         with open(FileStorage.__file_path, "r", encoding="utf-8") as f:
             dict_obj = json.load(f)
-            dict_obj = {k: self.classes()[v["__class__"]](**v)
-                        for k, v in obj_dict.items()}
+           # dict_obj = {k: self.classes()[v["__class__"]](**v)
+           #             for k, v in dict_obj.items()}
             FileStorage.__objects = dict_obj
